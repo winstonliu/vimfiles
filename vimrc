@@ -104,6 +104,7 @@ set guitablabel=%{GuiTabLabel()}
 inoremap jj <ESC>
 inoremap ,, ->
 inoremap ;; ::
+inoremap -- <=
 
 set number
 set noswapfile
