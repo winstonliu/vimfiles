@@ -96,6 +96,10 @@ noremap <A-j> <C-w>j
 noremap <A-l> <C-w>l
 noremap <A-h> <C-w>h
 
+noremap <A-s> <C-w>s
+noremap <A-v> <C-w>v
+noremap <A-c> <C-w>c
+
 set noundofile
 set number
 set noswapfile
