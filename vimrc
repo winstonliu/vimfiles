@@ -91,6 +91,7 @@ inoremap ,, ->
 inoremap ;; ::
 inoremap -- <=
 
+" Windowed movement
 noremap <A-k> <C-w>k
 noremap <A-j> <C-w>j
 noremap <A-l> <C-w>l
@@ -99,6 +100,8 @@ noremap <A-h> <C-w>h
 noremap <A-s> <C-w>s
 noremap <A-v> <C-w>v
 noremap <A-c> <C-w>c
+
+noremap <A-n> :tabe<CR>
 
 set noundofile
 set number
