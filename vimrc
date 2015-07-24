@@ -1,9 +1,12 @@
 " _vimrc
 
+let mapleader="\<Space>"
+
 " Disable menu display and sourcing to enable ALT key mappings
 " ... see :help guioptions for more info
-" set guioptions-=m
-" set guioptions-=M
+set guioptions-=m
+set guioptions-=M
+set guioptions-=T
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -110,6 +113,9 @@ function! GuiTabLabel()
 endfunction
 set guitablabel=%{GuiTabLabel()}
 
+" Git mappings
+nnoremap <leader>g :Gstatus<CR>
+
 " Mappings
 inoremap jj <ESC>
 inoremap ,, ->
@@ -117,16 +123,19 @@ inoremap ;; ::
 inoremap -- <=
 
 " Windowed movement
-noremap <A-k> <C-w>k
-noremap <A-j> <C-w>j
-noremap <A-l> <C-w>l
-noremap <A-h> <C-w>h
+nnoremap <A-k> <C-w>k
+nnoremap <A-j> <C-w>j
+nnoremap <A-l> <C-w>l
+nnoremap <A-h> <C-w>h
 
-noremap <A-s> <C-w>s
-noremap <A-v> <C-w>v
-noremap <A-c> <C-w>c
+nnoremap <A-s> <C-w>s
+nnoremap <A-v> <C-w>v
+nnoremap <A-c> <C-w>c
 
-noremap <A-n> :tabe<CR>
+nnoremap <A-n> :tabe %<CR>
+
+" Easy open vimrc
+nnoremap <leader>v :tabe $MYVIMRC<CR>
 
 " No undo files in ubuntu
 set noundofile
