@@ -1,12 +1,37 @@
 " _vimrc
 
-execute pathogen#infect()
-set nocompatible
-
 " Disable menu display and sourcing to enable ALT key mappings
 " ... see :help guioptions for more info
-set guioptions-=m
-set guioptions-=M
+" set guioptions-=m
+" set guioptions-=M
+
+set nocompatible              " be iMproved, required
+filetype off                  " required
+
+" set the runtime path to include Vundle and initialize
+" Set for different paths for different OSes. Doesn't work for MAC
+if has('win32')
+    set rtp+=$HOME/vimfiles/bundle/Vundle.vim
+    call vundle#begin("$HOME/vimfiles/bundle")
+else
+    set rtp+=~/.vim/bundle/Vundle.vim
+    call vundle#begin()
+endif
+
+    " alternatively, pass a path where Vundle should install plugins
+    " call vundle#begin('~/some/path/here')
+
+    " let Vundle manage Vundle, required
+    Plugin 'gmarik/Vundle.vim'
+    Plugin 'tpope/vim-fugitive'
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'godlygeek/tabular'
+    Plugin 'delimitMate.vim'
+
+    " All of your Plugins must be added before the following line
+call vundle#end()            " required
+filetype plugin indent on    " required
+" Put your non-Plugin stuff after this line
 
 " Need to figure out what this stuff does
 source $VIMRUNTIME/vimrc_example.vim
@@ -103,6 +128,7 @@ noremap <A-c> <C-w>c
 
 noremap <A-n> :tabe<CR>
 
+" No undo files in ubuntu
 set noundofile
 set number
 set noswapfile
