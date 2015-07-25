@@ -122,6 +122,9 @@ inoremap ,, ->
 inoremap ;; ::
 inoremap -- <=
 
+inoremap #pp #pragma once<CR>
+inoremap #ii #include
+
 " Windowed movement
 nnoremap <leader>k <C-w>k
 nnoremap <leader>j <C-w>j
@@ -132,7 +135,7 @@ nnoremap <leader>s <C-w>s
 nnoremap <leader>v <C-w>v
 nnoremap <leader>c <C-w>c
 
-nnoremap <A-n> :tabe %<CR>
+nnoremap <leader>n :tabe %<CR>
 
 " Easy open vimrc
 nnoremap <leader>r :tabe $MYVIMRC<CR>
