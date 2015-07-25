@@ -123,19 +123,19 @@ inoremap ;; ::
 inoremap -- <=
 
 " Windowed movement
-nnoremap <A-k> <C-w>k
-nnoremap <A-j> <C-w>j
-nnoremap <A-l> <C-w>l
-nnoremap <A-h> <C-w>h
+nnoremap <leader>k <C-w>k
+nnoremap <leader>j <C-w>j
+nnoremap <leader>l <C-w>l
+nnoremap <leader>h <C-w>h
 
-nnoremap <A-s> <C-w>s
-nnoremap <A-v> <C-w>v
-nnoremap <A-c> <C-w>c
+nnoremap <leader>s <C-w>s
+nnoremap <leader>v <C-w>v
+nnoremap <leader>c <C-w>c
 
 nnoremap <A-n> :tabe %<CR>
 
 " Easy open vimrc
-nnoremap <leader>v :tabe $MYVIMRC<CR>
+nnoremap <leader>r :tabe $MYVIMRC<CR>
 
 " No undo files in ubuntu
 set noundofile
