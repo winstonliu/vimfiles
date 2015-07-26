@@ -27,6 +27,7 @@ endif
     " let Vundle manage Vundle, required
     Plugin 'gmarik/Vundle.vim'
     Plugin 'tpope/vim-fugitive'
+    Plugin 'tpope/vim-surround'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'godlygeek/tabular'
     Plugin 'delimitMate.vim'
@@ -61,22 +62,22 @@ set foldnestmax=1
 set foldclose=all
 
 " Change into word processing mode for :WP
-func! WordProcessorMode() 
-    set guifont=Courier_New:h11:b:cANSI
-    set background=light
-    colorscheme solarized
-    setlocal formatoptions=1 
-    setlocal noexpandtab 
-    map j gj 
-    map k gk
-    setlocal spell spelllang=en_us 
-    set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
-    set complete+=s
-    set formatprg=par
-    setlocal wrap 
-    setlocal linebreak 
-endfu 
-com! WP call WordProcessorMode()
+"   func! WordProcessorMode() 
+"       set guifont=Courier_New:h11:b:cANSI
+"       set background=light
+"       colorscheme solarized
+"       setlocal formatoptions=1 
+"       setlocal noexpandtab 
+"       map j gj 
+"       map k gk
+"       setlocal spell spelllang=en_us 
+"       set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
+"       set complete+=s
+"       set formatprg=par
+"       setlocal wrap 
+"       setlocal linebreak 
+"   endfu 
+"   com! WP call WordProcessorMode()
 
 " Show tab numbers in GUI
 set showtabline=2 " always show tabs in gvim, but not vim
@@ -124,6 +125,7 @@ inoremap -- <=
 
 inoremap #pp #pragma once<CR>
 inoremap #ii #include
+inoremap #!! #!/bin/bash
 
 " Windowed movement
 nnoremap <leader>k <C-w>k
