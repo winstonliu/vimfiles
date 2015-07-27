@@ -121,7 +121,6 @@ nnoremap <leader>g :Gstatus<CR>
 inoremap jj <ESC>
 inoremap ,, ->
 inoremap ;; ::
-inoremap -- <=
 
 inoremap #pp #pragma once<CR>
 inoremap #ii #include
