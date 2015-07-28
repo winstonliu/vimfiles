@@ -11,7 +11,7 @@ set guioptions-=T
 set nocompatible              " be iMproved, required
 filetype off                  " required
 
-" set the runtime path to include Vundle and initialize
+" Vundle initialization -------------------------{{{ 
 " Set for different paths for different OSes. Doesn't work for MAC
 if has('win32')
     set guifont=FixedSys
@@ -41,8 +41,9 @@ endif
     " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" ------------------------------ Put your non-Plugin stuff after this line ------------------------------  
+" }}}
 
+" ------------------------------ Put your non-Plugin stuff after this line ------------------------------  
 " Need to figure out what this stuff does
 source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
@@ -67,7 +68,13 @@ set foldmethod=syntax
 set foldnestmax=1
 set foldclose=all
 
-" Show tab numbers in GUI
+" Vimscript file settings -------------------------{{{
+augroup filetype_vim
+    autocmd!
+    autocmd filetype vim setlocal foldmethod=marker
+augroup END
+" }}}
+" Show tab numbers in GUI -------------------------{{{ 
 set showtabline=2 " always show tabs in gvim, but not vim
 " set up tab labels with tab number, buffer name, number of windows
 function! GuiTabLabel()
@@ -101,6 +108,7 @@ function! GuiTabLabel()
     return label . '  [' . wincount . ']'
 endfunction
 set guitablabel=%{GuiTabLabel()}
+" }}}
 
 " Abbreviations
 inoreabbrev hpp #pragma once<CR>
@@ -110,7 +118,7 @@ inoreabbrev bbb #!/bin/bash<CR>
 " Git mappings (fugitive)
 nnoremap <leader>g :Gstatus<CR>
 
-" Goyo mappings
+" Goyo mappings -------------------------{{{ 
 noremap <leader>wp :Goyo 120x85%<CR>
 function! s:goyo_enter()
     set guifont=Consolas:h12:cANSI
@@ -134,6 +142,7 @@ endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+" }}}
 
 " Unite mappings
 nnoremap <leader>f :Unite file_rec buffer<CR>
