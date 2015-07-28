@@ -7,7 +7,6 @@ let mapleader="\<Space>"
 set guioptions-=m
 set guioptions-=M
 set guioptions-=T
-set guifont=FixedSys
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -15,9 +14,11 @@ filetype off                  " required
 " set the runtime path to include Vundle and initialize
 " Set for different paths for different OSes. Doesn't work for MAC
 if has('win32')
+    set guifont=FixedSys
     set rtp+=$HOME/vimfiles/bundle/Vundle.vim
     call vundle#begin("$HOME/vimfiles/bundle")
 else
+    set guifont=mono
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
 endif
