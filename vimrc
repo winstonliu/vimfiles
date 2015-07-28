@@ -7,6 +7,7 @@ let mapleader="\<Space>"
 set guioptions-=m
 set guioptions-=M
 set guioptions-=T
+set guifont=FixedSys
 
 set nocompatible              " be iMproved, required
 filetype off                  " required
@@ -30,12 +31,16 @@ endif
     Plugin 'tpope/vim-surround'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'godlygeek/tabular'
+    Plugin 'Shougo/unite.vim'
+    Plugin 'ervandew/supertab'
+    Plugin 'reedes/vim-colors-pencil'
+    Plugin 'junegunn/goyo.vim'
     Plugin 'delimitMate.vim'
 
     " All of your Plugins must be added before the following line
 call vundle#end()            " required
 filetype plugin indent on    " required
-" Put your non-Plugin stuff after this line
+" ------------------------------ Put your non-Plugin stuff after this line ------------------------------  
 
 " Need to figure out what this stuff does
 source $VIMRUNTIME/vimrc_example.vim
@@ -60,24 +65,6 @@ let g:netrw_browse_split=3
 set foldmethod=syntax
 set foldnestmax=1
 set foldclose=all
-
-" Change into word processing mode for :WP
-"   func! WordProcessorMode() 
-"       set guifont=Courier_New:h11:b:cANSI
-"       set background=light
-"       colorscheme solarized
-"       setlocal formatoptions=1 
-"       setlocal noexpandtab 
-"       map j gj 
-"       map k gk
-"       setlocal spell spelllang=en_us 
-"       set thesaurus+=/Users/sbrown/.vim/thesaurus/mthesaur.txt
-"       set complete+=s
-"       set formatprg=par
-"       setlocal wrap 
-"       setlocal linebreak 
-"   endfu 
-"   com! WP call WordProcessorMode()
 
 " Show tab numbers in GUI
 set showtabline=2 " always show tabs in gvim, but not vim
@@ -114,17 +101,46 @@ function! GuiTabLabel()
 endfunction
 set guitablabel=%{GuiTabLabel()}
 
-" Git mappings
+" Abbreviations
+inoreabbrev hpp #pragma once<CR>
+inoreabbrev hii #include
+inoreabbrev bbb #!/bin/bash<CR>
+
+" Git mappings (fugitive)
 nnoremap <leader>g :Gstatus<CR>
 
+" Goyo mappings
+noremap <leader>wp :Goyo 120x85%<CR>
+function! s:goyo_enter()
+    set guifont=Consolas:h12:cANSI
+    setlocal showmode
+    noremap j gj
+    noremap k gk
+    setlocal background=light
+    colorscheme pencil
+    set syntax=disable
+    setlocal scrolloff=999
+endfunction
+
+function! s:goyo_leave()
+    set guifont=FixedSys
+    nunmap j gj
+    nunmap k gk
+    setlocal background=dark
+    colorscheme solarized
+    setlocal scrolloff=5
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+
+" Unite mappings
+nnoremap <leader>f :Unite file_rec buffer<CR>
+
 " Mappings
-inoremap jj <ESC>
+inoremap jk <ESC>
 inoremap ,, ->
 inoremap ;; ::
-
-inoremap #pp #pragma once<CR>
-inoremap #ii #include
-inoremap #!! #!/bin/bash
 
 " Windowed movement
 nnoremap <leader>k <C-w>k
@@ -138,8 +154,8 @@ nnoremap <leader>c <C-w>c
 
 nnoremap <leader>n :tabe %<CR>
 
-" Easy open vimrc
-nnoremap <leader>r :tabe $MYVIMRC<CR>
+" Easy (e)dit (v)imrc
+nnoremap <leader>ev :tabe $MYVIMRC<CR>
 
 " No undo files in ubuntu
 set noundofile
