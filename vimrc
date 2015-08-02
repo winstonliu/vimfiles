@@ -117,7 +117,9 @@ inoreabbrev hii #include
 inoreabbrev bbb #!/bin/bash<CR>
 
 " Git mappings (fugitive)
-nnoremap <leader>g :Gstatus<CR>
+nnoremap <leader>gs :Gstatus<CR>
+nnoremap <leader>gf :Gfetch origin master<CR>
+nnoremap <leader>gp :Gpush origin master<CR>
 
 " Goyo mappings -------------------------{{{ 
 noremap <leader>wp :Goyo 120x85%<CR>
