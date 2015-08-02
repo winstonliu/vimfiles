@@ -36,6 +36,7 @@ endif
     Plugin 'ervandew/supertab'
     Plugin 'reedes/vim-colors-pencil'
     Plugin 'junegunn/goyo.vim'
+    Plugin 'scrooloose/nerdcommenter'
     Plugin 'delimitMate.vim'
 
     " All of your Plugins must be added before the following line
@@ -123,9 +124,10 @@ noremap <leader>wp :Goyo 120x85%<CR>
 function! s:goyo_enter()
     set guifont=Consolas:h12:cANSI
     setlocal showmode
+    set foldmethod=manual
     noremap j gj
     noremap k gk
-    setlocal background=light
+    setlocal background=dark
     colorscheme pencil
     set syntax=disable
     setlocal scrolloff=999
@@ -133,6 +135,9 @@ endfunction
 
 function! s:goyo_leave()
     set guifont=FixedSys
+    set foldmethod=syntax
+    set foldnestmax=1
+    set foldclose=all
     nunmap j gj
     nunmap k gk
     setlocal background=dark
@@ -160,7 +165,7 @@ nnoremap <leader>h <C-w>h
 
 nnoremap <leader>s <C-w>s
 nnoremap <leader>v <C-w>v
-nnoremap <leader>c <C-w>c
+nnoremap <leader>q <C-w>c
 
 nnoremap <leader>n :tabe %<CR>
 
