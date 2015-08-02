@@ -120,6 +120,7 @@ inoreabbrev bbb #!/bin/bash<CR>
 nnoremap <leader>gs :Gstatus<CR>
 nnoremap <leader>gf :Gfetch origin master<CR>
 nnoremap <leader>gp :Gpush origin master<CR>
+nnoremap <leader>gl :Gpull origin master<CR>
 
 " Goyo mappings -------------------------{{{ 
 noremap <leader>wp :Goyo 120x85%<CR>
