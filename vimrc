@@ -65,9 +65,11 @@ let delimitMate_jump_expansion=1
 let g:netrw_browse_split=3
 
 " Folding
-set foldmethod=syntax
-set foldnestmax=1
-set foldclose=all
+set foldmethod=manual
+
+"set foldmethod=syntax
+"set foldnestmax=1
+"set foldclose=all
 
 " Vimscript file settings -------------------------{{{
 augroup filetype_vim
@@ -126,7 +128,6 @@ noremap <leader>wp :Goyo 120x85%<CR>
 function! s:goyo_enter()
     set guifont=Consolas:h12:cANSI
     setlocal showmode
-    set foldmethod=manual
     noremap j gj
     noremap k gk
     setlocal background=dark
@@ -137,9 +138,6 @@ endfunction
 
 function! s:goyo_leave()
     set guifont=FixedSys
-    set foldmethod=syntax
-    set foldnestmax=1
-    set foldclose=all
     nunmap j gj
     nunmap k gk
     setlocal background=dark
@@ -156,7 +154,8 @@ nnoremap <leader>f :Unite file_rec buffer<CR>
 
 " Mappings
 inoremap jk <ESC>
-inoremap ,, ->
+inoremap ,. ->
+inoremap ., <=
 inoremap ;; ::
 
 " Windowed movement
