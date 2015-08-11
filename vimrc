@@ -30,14 +30,13 @@ endif
     Plugin 'gmarik/Vundle.vim'
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-surround'
-    Plugin 'altercation/vim-colors-solarized'
     Plugin 'godlygeek/tabular'
     Plugin 'Shougo/unite.vim'
     Plugin 'ervandew/supertab'
-    Plugin 'reedes/vim-colors-pencil'
     Plugin 'junegunn/goyo.vim'
-    Plugin 'scrooloose/nerdcommenter'
     Plugin 'delimitMate.vim'
+    Plugin 'altercation/vim-colors-solarized'
+    Plugin 'reedes/vim-colors-pencil'
 
     " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -151,7 +150,8 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 
 " Unite mappings
-nnoremap <leader>f :Unite file_rec buffer<CR>
+call unite#custom#source('file/async', 'matchers', ['matcher_default'])
+nnoremap <leader>f :Unite file_rec<CR>
 
 " Mappings
 inoremap jk <ESC>
@@ -160,16 +160,16 @@ inoremap ., <=
 inoremap ;; ::
 
 " Windowed movement
-nnoremap <leader>k <C-w>k
-nnoremap <leader>j <C-w>j
-nnoremap <leader>l <C-w>l
-nnoremap <leader>h <C-w>h
+nnoremap <leader>wk <C-w>k
+nnoremap <leader>wj <C-w>j
+nnoremap <leader>wl <C-w>l
+nnoremap <leader>wh <C-w>h
 
-nnoremap <leader>s <C-w>s
-nnoremap <leader>v <C-w>v
-nnoremap <leader>q <C-w>c
+nnoremap <leader>ws <C-w>s
+nnoremap <leader>wv <C-w>v
+nnoremap <leader>wq <C-w>c
 
-nnoremap <leader>n :tabe %<CR>
+nnoremap <leader>wn :tabe %<CR>
 
 " Easy (e)dit (v)imrc
 nnoremap <leader>ev :tabe $MYVIMRC<CR>
