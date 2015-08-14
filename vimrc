@@ -35,6 +35,7 @@ endif
     Plugin 'ervandew/supertab'
     Plugin 'junegunn/goyo.vim'
     Plugin 'delimitMate.vim'
+    Plugin 'tomtom/tcomment_vim'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'reedes/vim-colors-pencil'
 
@@ -160,10 +161,10 @@ inoremap ., <=
 inoremap ;; ::
 
 " Windowed movement
-nnoremap <leader>wk <C-w>k
-nnoremap <leader>wj <C-w>j
-nnoremap <leader>wl <C-w>l
-nnoremap <leader>wh <C-w>h
+nnoremap <leader>k <C-w>k
+nnoremap <leader>j <C-w>j
+nnoremap <leader>l <C-w>l
+nnoremap <leader>h <C-w>h
 
 nnoremap <leader>ws <C-w>s
 nnoremap <leader>wv <C-w>v
