@@ -14,7 +14,7 @@ filetype off                  " required
 " Vundle initialization -------------------------{{{ 
 " Set for different paths for different OSes. Doesn't work for MAC
 if has('win32')
-    set guifont=FixedSys
+    set guifont=Consolas:h11:cANSI
     set rtp+=$HOME/vimfiles/bundle/Vundle.vim
     call vundle#begin("$HOME/vimfiles/bundle")
 else
@@ -62,7 +62,7 @@ let delimitMate_jump_expansion=1
 
 " netrw
 " Open in a new tab
-let g:netrw_browse_split=3
+let g:netrw_browse_split=2
 
 " Folding
 set foldmethod=manual
@@ -133,12 +133,12 @@ function! s:goyo_enter()
     noremap k gk
     setlocal background=dark
     colorscheme pencil
-    set syntax=disable
+    " set syntax=disable
     setlocal scrolloff=999
 endfunction
 
 function! s:goyo_leave()
-    set guifont=FixedSys
+    set guifont=Consolas:h11:cANSI
     nunmap j gj
     nunmap k gk
     setlocal background=dark
@@ -152,7 +152,7 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Unite mappings
 call unite#custom#source('file/async', 'matchers', ['matcher_default'])
-nnoremap <leader>f :Unite file_rec<CR>
+nnoremap <leader>f :Unite file_rec buffer<CR>
 
 " Mappings
 inoremap jk <ESC>
@@ -168,7 +168,7 @@ nnoremap <leader>h <C-w>h
 
 nnoremap <leader>ws <C-w>s
 nnoremap <leader>wv <C-w>v
-nnoremap <leader>wq <C-w>c
+nnoremap <leader>x <C-w>c
 
 nnoremap <leader>wn :tabe %<CR>
 
