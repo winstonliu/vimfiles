@@ -31,7 +31,6 @@ endif
     Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-surround'
     Plugin 'godlygeek/tabular'
-    Plugin 'Shougo/unite.vim'
     Plugin 'ervandew/supertab'
     Plugin 'junegunn/goyo.vim'
     Plugin 'delimitMate.vim'
