@@ -150,8 +150,8 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 
 " Unite mappings
-call unite#custom#source('file/async', 'matchers', ['matcher_default'])
-nnoremap <leader>f :Unite file_rec buffer<CR>
+" call unite#custom#source('file/async', 'matchers', ['matcher_default'])
+" nnoremap <leader>f :Unite file_rec buffer<CR>
 
 " Mappings
 inoremap jk <ESC>
