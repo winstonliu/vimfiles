@@ -170,6 +170,7 @@ nnoremap <leader>wv <C-w>v
 nnoremap <leader>x <C-w>c
 
 nnoremap <leader>wn :tabe %<CR>
+nnoremap <leader>ww :w<CR>
 
 " Easy (e)dit (v)imrc
 nnoremap <leader>ev :tabe $MYVIMRC<CR>
