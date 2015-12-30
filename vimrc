@@ -155,9 +155,10 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 " Mappings
 inoremap jk <ESC>
-inoremap ,. ->
-inoremap ., <=
-inoremap ;; ::
+" inoremap ,. ->
+" inoremap ., <=
+" inoremap ;; ::
+inoremap ,, \>
 
 " Windowed movement
 nnoremap <leader>k <C-w>k
