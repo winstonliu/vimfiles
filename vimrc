@@ -34,7 +34,8 @@ endif
     Plugin 'ervandew/supertab'
     Plugin 'junegunn/goyo.vim'
     Plugin 'delimitMate.vim'
-    Plugin 'tomtom/tcomment_vim'
+    " Plugin 'tomtom/tcomment_vim'
+    Plugin 'scrooloose/nerdcommenter'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'reedes/vim-colors-pencil'
 
@@ -175,6 +176,7 @@ nnoremap <leader>ww :w<CR>
 
 " Easy (e)dit (v)imrc
 nnoremap <leader>ev :tabe $MYVIMRC<CR>
+nnoremap <leader>cd :cd %:p:h<CR>
 
 " No undo files in ubuntu
 set noundofile
