@@ -37,6 +37,7 @@ endif
     " Plugin 'tomtom/tcomment_vim'
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'altercation/vim-colors-solarized'
+    Plugin 'vim-scripts/kpl.vim'
     Plugin 'reedes/vim-colors-pencil'
 
     " All of your Plugins must be added before the following line
@@ -178,11 +179,14 @@ nnoremap <leader>ww :w<CR>
 nnoremap <leader>ev :tabe $MYVIMRC<CR>
 nnoremap <leader>cd :cd %:p:h<CR>
 
+" Set syntax kpl
+nnoremap <leader>sk :set syntax=kpl<CR>
+
 " No undo files in ubuntu
 set noundofile
 set number
 set noswapfile
 set nobackup
-set tabstop=4
-set shiftwidth=4
-set expandtab
+set tabstop=2
+set shiftwidth=2
+" set expandtab
