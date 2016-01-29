@@ -36,8 +36,8 @@ endif
     Plugin 'delimitMate.vim'
     " Plugin 'tomtom/tcomment_vim'
     Plugin 'scrooloose/nerdcommenter'
+		Plugin 'winstonliu/kpl.vim'
     Plugin 'altercation/vim-colors-solarized'
-    Plugin 'vim-scripts/kpl.vim'
     Plugin 'reedes/vim-colors-pencil'
 
     " All of your Plugins must be added before the following line
@@ -178,9 +178,6 @@ nnoremap <leader>ww :w<CR>
 " Easy (e)dit (v)imrc
 nnoremap <leader>ev :tabe $MYVIMRC<CR>
 nnoremap <leader>cd :cd %:p:h<CR>
-
-" Set syntax kpl
-nnoremap <leader>sk :set syntax=kpl<CR>
 
 " No undo files in ubuntu
 set noundofile
