@@ -50,11 +50,13 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-" Colorscheme = solarized
 syntax enable
-let g:solarized_italic=0
-set background=dark
-colorscheme solarized
+if has("gui_running")
+    " Colorscheme = solarized
+    let g:solarized_italic=0
+    set background=dark
+    colorscheme solarized
+endif
 
 " delimitMate
 let delimitMate_expand_cr=1
@@ -118,12 +120,6 @@ inoreabbrev hpp #pragma once<CR>
 inoreabbrev hii #include
 inoreabbrev bbb #!/bin/bash<CR>
 
-" Git mappings (fugitive)
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gf :Gfetch origin master<CR>
-nnoremap <leader>gp :Gpush origin master<CR>
-nnoremap <leader>gl :Gpull origin master<CR>
-
 " Goyo mappings -------------------------{{{ 
 noremap <leader>wp :Goyo 120x85%<CR>
 function! s:goyo_enter()
@@ -150,16 +146,8 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 
-" Unite mappings
-" call unite#custom#source('file/async', 'matchers', ['matcher_default'])
-" nnoremap <leader>f :Unite file_rec buffer<CR>
-
 " Mappings
 inoremap jk <ESC>
-" inoremap ,. ->
-" inoremap ., <=
-" inoremap ;; ::
-inoremap ,, \>
 
 " Windowed movement
 nnoremap <leader>k <C-w>k
