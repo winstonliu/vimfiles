@@ -48,11 +48,13 @@ source $VIMRUNTIME/vimrc_example.vim
 source $VIMRUNTIME/mswin.vim
 behave mswin
 
-" Colorscheme = solarized
 syntax enable
-let g:solarized_italic=0
-set background=dark
-colorscheme solarized
+if has("gui_running")
+    " Colorscheme = solarized
+    let g:solarized_italic=0
+    set background=dark
+    colorscheme solarized
+endif
 
 " delimitMate
 let delimitMate_expand_cr=1
@@ -138,7 +140,6 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 
-" Mappings
 noremap! jk <ESC>
 vnoremap as <ESC>
 inoremap ,, \>
