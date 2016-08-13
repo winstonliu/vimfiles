@@ -28,13 +28,11 @@ endif
 
     " let Vundle manage Vundle, required
     Plugin 'gmarik/Vundle.vim'
-    Plugin 'tpope/vim-fugitive'
     Plugin 'tpope/vim-surround'
     Plugin 'godlygeek/tabular'
     Plugin 'ervandew/supertab'
     Plugin 'junegunn/goyo.vim'
     Plugin 'delimitMate.vim'
-    " Plugin 'tomtom/tcomment_vim'
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'reedes/vim-colors-pencil'
@@ -66,10 +64,6 @@ let g:netrw_browse_split=2
 
 " Folding
 set foldmethod=manual
-
-"set foldmethod=syntax
-"set foldnestmax=1
-"set foldclose=all
 
 " Vimscript file settings -------------------------{{{
 augroup filetype_vim
@@ -118,12 +112,6 @@ inoreabbrev hpp #pragma once<CR>
 inoreabbrev hii #include
 inoreabbrev bbb #!/bin/bash<CR>
 
-" Git mappings (fugitive)
-nnoremap <leader>gs :Gstatus<CR>
-nnoremap <leader>gf :Gfetch origin master<CR>
-nnoremap <leader>gp :Gpush origin master<CR>
-nnoremap <leader>gl :Gpull origin master<CR>
-
 " Goyo mappings -------------------------{{{ 
 noremap <leader>wp :Goyo 120x85%<CR>
 function! s:goyo_enter()
@@ -150,15 +138,9 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 
-" Unite mappings
-" call unite#custom#source('file/async', 'matchers', ['matcher_default'])
-" nnoremap <leader>f :Unite file_rec buffer<CR>
-
 " Mappings
-inoremap jk <ESC>
-" inoremap ,. ->
-" inoremap ., <=
-" inoremap ;; ::
+noremap! jk <ESC>
+vnoremap as <ESC>
 inoremap ,, \>
 
 " Windowed movement
@@ -174,6 +156,8 @@ nnoremap <leader>x <C-w>c
 nnoremap <leader>wn :tabe %<CR>
 nnoremap <leader>ww :w<CR>
 
+nnoremap <leader>wr :set nowrap<CR>
+
 " Easy (e)dit (v)imrc
 nnoremap <leader>ev :tabe $MYVIMRC<CR>
 nnoremap <leader>cd :cd %:p:h<CR>
@@ -186,3 +170,5 @@ set nobackup
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+set viewdir=$HOME/vimfiles/views/
