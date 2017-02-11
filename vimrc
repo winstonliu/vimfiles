@@ -62,7 +62,7 @@ let delimitMate_jump_expansion=1
 
 " netrw
 " Open in a new tab
-let g:netrw_browse_split=2
+let g:netrw_browse_split=0
 
 " Folding
 set foldmethod=manual
@@ -109,11 +109,6 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 " }}}
 
-" Abbreviations
-inoreabbrev hpp #pragma once<CR>
-inoreabbrev hii #include
-inoreabbrev bbb #!/bin/bash<CR>
-
 " Goyo mappings -------------------------{{{ 
 noremap <leader>wp :Goyo 120x85%<CR>
 function! s:goyo_enter()
@@ -142,7 +137,6 @@ autocmd! User GoyoLeave nested call <SID>goyo_leave()
 
 noremap! jk <ESC>
 vnoremap as <ESC>
-inoremap ,, \>
 
 " Windowed movement
 nnoremap <leader>k <C-w>k
