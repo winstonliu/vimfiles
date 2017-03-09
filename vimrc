@@ -144,8 +144,8 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>l <C-w>l
 nnoremap <leader>h <C-w>h
 
-nnoremap ws <C-w>s
-nnoremap wv <C-w>v
+nnoremap <leader>ws <C-w>s
+nnoremap <leader>wv <C-w>v
 nnoremap <leader>x <C-w>c
 
 nnoremap <leader>wn :tabe %<CR>
