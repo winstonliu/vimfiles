@@ -144,13 +144,12 @@ nnoremap <leader>j <C-w>j
 nnoremap <leader>l <C-w>l
 nnoremap <leader>h <C-w>h
 
-nnoremap <leader>ws <C-w>s
-nnoremap <leader>wv <C-w>v
+nnoremap ws <C-w>s
+nnoremap wv <C-w>v
 nnoremap <leader>x <C-w>c
 
 nnoremap <leader>wn :tabe %<CR>
-nnoremap <leader>ww :w<CR>
-
+nnoremap <leader>ww :w<CR> 
 nnoremap <leader>wr :set nowrap<CR>
 
 " Easy (e)dit (v)imrc
