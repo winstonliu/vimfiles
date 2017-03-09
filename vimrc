@@ -31,11 +31,11 @@ endif
     Plugin 'tpope/vim-surround'
     Plugin 'godlygeek/tabular'
     Plugin 'ervandew/supertab'
-    Plugin 'junegunn/goyo.vim'
     Plugin 'delimitMate.vim'
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'reedes/vim-colors-pencil'
+    Plugin 'lervag/vimtex'
 
     " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -107,32 +107,6 @@ function! GuiTabLabel()
     return label . '  [' . wincount . ']'
 endfunction
 set guitablabel=%{GuiTabLabel()}
-" }}}
-
-" Goyo mappings -------------------------{{{ 
-noremap <leader>wp :Goyo 120x85%<CR>
-function! s:goyo_enter()
-    set guifont=Consolas:h12:cANSI
-    setlocal showmode
-    noremap j gj
-    noremap k gk
-    setlocal background=dark
-    colorscheme pencil
-    " set syntax=disable
-    setlocal scrolloff=999
-endfunction
-
-function! s:goyo_leave()
-    set guifont=Consolas:h11:cANSI
-    nunmap j gj
-    nunmap k gk
-    setlocal background=dark
-    colorscheme solarized
-    setlocal scrolloff=5
-endfunction
-
-autocmd! User GoyoEnter nested call <SID>goyo_enter()
-autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 
 noremap! jk <ESC>
