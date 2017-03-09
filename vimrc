@@ -36,6 +36,8 @@ endif
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'reedes/vim-colors-pencil'
+    Plugin 'xolox/vim-misc'
+    Plugin 'xolox/vim-notes'
 
     " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -112,27 +114,28 @@ set guitablabel=%{GuiTabLabel()}
 " Goyo mappings -------------------------{{{ 
 noremap <leader>wp :Goyo 120x85%<CR>
 function! s:goyo_enter()
-    set guifont=Consolas:h12:cANSI
     setlocal showmode
     noremap j gj
     noremap k gk
-    setlocal background=dark
+    set background=dark
     colorscheme pencil
     " set syntax=disable
     setlocal scrolloff=999
 endfunction
 
 function! s:goyo_leave()
-    set guifont=Consolas:h11:cANSI
-    nunmap j gj
-    nunmap k gk
-    setlocal background=dark
-    colorscheme solarized
+    nunmap j
+    nunmap k
+    colorscheme default
     setlocal scrolloff=5
 endfunction
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
+" }}}
+" vim-notes mappings ---{{{
+let g:notes_directories=['~/Dropbox/Writing/SFF/pangea']
+let g:notes_suffix= '.markdown'
 " }}}
 
 noremap! jk <ESC>
@@ -153,7 +156,7 @@ nnoremap <leader>ww :w<CR>
 nnoremap <leader>wr :set nowrap<CR>
 
 " Easy (e)dit (v)imrc
-nnoremap <leader>ev :tabe $MYVIMRC<CR>
+nnoremap <leader>ev :tabe $HOME/.vim/vimrc<CR>
 nnoremap <leader>cd :cd %:p:h<CR>
 
 " No undo files in ubuntu
@@ -166,3 +169,4 @@ set shiftwidth=4
 set expandtab
 
 set viewdir=$HOME/vimfiles/views/
+set tags=./tags;/
