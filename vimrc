@@ -117,9 +117,6 @@ function! s:goyo_enter()
     setlocal showmode
     noremap j gj
     noremap k gk
-    set background=dark
-    colorscheme pencil
-    " set syntax=disable
     setlocal scrolloff=999
 endfunction
 
