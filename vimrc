@@ -131,7 +131,7 @@ autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
 " }}}
 " vim-notes mappings ---{{{
-let g:notes_directories=['~/Dropbox/Writing/SFF/pangea']
+let g:notes_directories=['~/Dropbox/Writing/SFF']
 let g:notes_suffix= '.markdown'
 " }}}
 
