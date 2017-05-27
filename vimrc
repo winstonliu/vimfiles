@@ -112,8 +112,6 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 " }}}
 
-<<<<<<< HEAD
-=======
 " Goyo mappings -------------------------{{{ 
 noremap <leader>wp :Goyo 120x85%<CR>
 function! s:goyo_enter()
@@ -138,7 +136,6 @@ let g:notes_directories=['~/Dropbox/Writing/SFF']
 let g:notes_suffix= '.markdown'
 " }}}
 
->>>>>>> writing
 noremap! jk <ESC>
 vnoremap as <ESC>
 
