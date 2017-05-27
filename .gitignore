@@ -1,5 +1,6 @@
 tags
 .netrwhist
 /bundle
+tags
 
 !bundle/Vundle.vim/*

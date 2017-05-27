@@ -29,6 +29,7 @@ endif
     " let Vundle manage Vundle, required
     Plugin 'gmarik/Vundle.vim'
     Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-fugitive'
     Plugin 'godlygeek/tabular'
     Plugin 'ervandew/supertab'
     Plugin 'delimitMate.vim'
@@ -36,6 +37,8 @@ endif
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'reedes/vim-colors-pencil'
     Plugin 'lervag/vimtex'
+    Plugin 'xolox/vim-misc'
+    Plugin 'xolox/vim-notes'
 
     " All of your Plugins must be added before the following line
 call vundle#end()            " required
@@ -109,6 +112,33 @@ endfunction
 set guitablabel=%{GuiTabLabel()}
 " }}}
 
+<<<<<<< HEAD
+=======
+" Goyo mappings -------------------------{{{ 
+noremap <leader>wp :Goyo 120x85%<CR>
+function! s:goyo_enter()
+    setlocal showmode
+    noremap j gj
+    noremap k gk
+    setlocal scrolloff=999
+endfunction
+
+function! s:goyo_leave()
+    nunmap j
+    nunmap k
+    colorscheme default
+    setlocal scrolloff=5
+endfunction
+
+autocmd! User GoyoEnter nested call <SID>goyo_enter()
+autocmd! User GoyoLeave nested call <SID>goyo_leave()
+" }}}
+" vim-notes mappings ---{{{
+let g:notes_directories=['~/Dropbox/Writing/SFF']
+let g:notes_suffix= '.markdown'
+" }}}
+
+>>>>>>> writing
 noremap! jk <ESC>
 vnoremap as <ESC>
 
@@ -123,12 +153,15 @@ nnoremap <leader>wv <C-w>v
 nnoremap <leader>x <C-w>c
 
 nnoremap <leader>wn :tabe %<CR>
-nnoremap <leader>ww :w<CR>
-
+nnoremap <leader>ww :w<CR> 
 nnoremap <leader>wr :set nowrap<CR>
 
+" Fugitive mappings
+
+nnoremap <leader>gs :Gstatus<CR>
+
 " Easy (e)dit (v)imrc
-nnoremap <leader>ev :tabe $MYVIMRC<CR>
+nnoremap <leader>ev :tabe $HOME/.vim/vimrc<CR>
 nnoremap <leader>cd :cd %:p:h<CR>
 
 " No undo files in ubuntu
@@ -141,3 +174,4 @@ set shiftwidth=4
 set expandtab
 
 set viewdir=$HOME/vimfiles/views/
+set tags=./tags;/
