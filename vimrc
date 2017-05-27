@@ -29,6 +29,7 @@ endif
     " let Vundle manage Vundle, required
     Plugin 'gmarik/Vundle.vim'
     Plugin 'tpope/vim-surround'
+    Plugin 'tpope/vim-fugitive'
     Plugin 'godlygeek/tabular'
     Plugin 'ervandew/supertab'
     Plugin 'junegunn/goyo.vim'
@@ -151,6 +152,10 @@ nnoremap <leader>x <C-w>c
 nnoremap <leader>wn :tabe %<CR>
 nnoremap <leader>ww :w<CR> 
 nnoremap <leader>wr :set nowrap<CR>
+
+" Fugitive mappings
+
+nnoremap <leader>gs :Gstatus<CR>
 
 " Easy (e)dit (v)imrc
 nnoremap <leader>ev :tabe $HOME/.vim/vimrc<CR>
