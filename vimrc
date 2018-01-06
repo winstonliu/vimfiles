@@ -18,7 +18,7 @@ if has('win32')
     set rtp+=$HOME/vimfiles/bundle/Vundle.vim
     call vundle#begin("$HOME/vimfiles/bundle")
 else
-    set guifont=mono
+    set guifont=Monospace\ 11
     set rtp+=~/.vim/bundle/Vundle.vim
     call vundle#begin()
 endif
@@ -33,6 +33,7 @@ endif
     Plugin 'godlygeek/tabular'
     Plugin 'ervandew/supertab'
     Plugin 'delimitMate.vim'
+    Plugin 'junegunn/goyo.vim'
     Plugin 'scrooloose/nerdcommenter'
     Plugin 'altercation/vim-colors-solarized'
     Plugin 'reedes/vim-colors-pencil'
