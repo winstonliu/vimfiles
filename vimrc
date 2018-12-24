@@ -66,6 +66,8 @@ let delimitMate_jump_expansion=1
 " netrw
 " Open in a new tab
 let g:netrw_browse_split=0
+" Set line numbers in netrw
+let g:netrw_bufsettings = 'noma nomod nu nobl nowrap ro'
 
 " Folding
 set foldmethod=manual
@@ -124,7 +126,6 @@ endfunction
 function! s:goyo_leave()
     nunmap j
     nunmap k
-    colorscheme default
     setlocal scrolloff=5
 endfunction
 
@@ -158,7 +159,12 @@ nnoremap <leader>wr :set nowrap<CR>
 nnoremap <leader>gs :Gstatus<CR>
 
 " Easy (e)dit (v)imrc
-nnoremap <leader>ev :tabe $HOME/.vim/vimrc<CR>
+if has('win32')
+    nnoremap <leader>ev :tabe $HOME/vimfiles/vimrc<CR>
+else
+    nnoremap <leader>ev :tabe $HOME/.vim/vimrc<CR>
+endif
+
 nnoremap <leader>cd :cd %:p:h<CR>
 
 " No undo files in ubuntu
